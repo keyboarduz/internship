@@ -40,4 +40,10 @@ return [
         ],
     ],
 
+    'amo' => [
+        'login' => env('AMO_USER_LOGIN'),
+        'hash' => env('AMO_USER_HASH'),
+        'domain' => env('AMO_DOMAIN'),
+    ]
+
 ];

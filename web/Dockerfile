@@ -1,7 +1,21 @@
 FROM php:7.3-apache
 
+# Install required libs
+RUN apt-get update && \
+    apt-get install -y \
+        libpng-dev \
+        libmcrypt-dev \
+    && apt-get clean
+
+#
+# Install extensions
+#
 RUN docker-php-ext-install \
+    ctype \
+    mbstring \
     pdo_mysql \
+    bcmath \
+    gd \
     && a2enmod \
     rewrite
 
